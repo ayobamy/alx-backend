@@ -3,7 +3,7 @@
 a simple flask app
 """
 from flask import Flask, render_template
-from flask_babel import Babel
+from flask_babel import Babel, localeselector
 
 
 app = Flask(__name__)
@@ -28,7 +28,7 @@ def hello_world():
     """
     outputs hello world
     """
-    return render_template("1-index.html")
+    return render_template("2-index.html")
 
 
 @babel.localeselector
