@@ -2,11 +2,12 @@
 """
 a simple flask app
 """
-from flask import Flask, render_template
-from flask_babel import Babel, _, gettext
+from flask import Flask, render_template, request
+from flask_babel import Babel
 
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 babel = Babel(app)
 
 
@@ -25,9 +26,10 @@ app.config.from_object(Config)
 
 @app.route('/')
 def hello_world():
-    title = _("home_title")
-    header = _("home_header")
-    return render_template("3-index.html", title=title, header=header)
+    """
+    parameterize
+    """
+    return render_template("3-index.html")
 
 
 @babel.localeselector
