@@ -3,7 +3,7 @@
 a simple flask app
 """
 from flask import Flask, render_template, request
-from flask_babel import Babel
+from flask_babel import Babel, _, gettext
 
 
 app = Flask(__name__)
@@ -27,9 +27,11 @@ app.config.from_object(Config)
 @app.route('/')
 def hello_world():
     """
-    parameterize
+    parametersize
     """
-    return render_template("3-index.html")
+    title = _("home_title")
+    header = _("home_header")
+    return render_template("3-index.html", title=title, header=header)
 
 
 @babel.localeselector
