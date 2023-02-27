@@ -3,6 +3,7 @@
 Pagination
 """
 import requests
+from typing import Tuple
 
 
 def index_range(page: int, page_size: int) -> tuple[int, int]:
