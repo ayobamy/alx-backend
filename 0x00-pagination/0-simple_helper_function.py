@@ -2,7 +2,6 @@
 """
 Pagination
 """
-import requests
 from typing import Tuple
 
 
