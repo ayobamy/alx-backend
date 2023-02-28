@@ -13,18 +13,18 @@ client.on('connect', () => {
   console.log('Redis client connected to the server');
 });
 
-const setNewSchool = setNewSchool((schoolName, value) => {
+function setNewSchool(schoolName, value) {
   client.set(schoolName, value, redis.print);
-});
+}
 
-const displaySchoolValue = displaySchoolValue ((schoolName) => {
+function displaySchoolValue(schoolName) {
   client.get(schoolName, (err, value) => {
     if (err) {
         console.log(err);
     }
     console.log(value);
   });
-});
+}
 
 displaySchoolValue('Holberton');
 setNewSchool('HolbertonSanFrancisco', '100');
